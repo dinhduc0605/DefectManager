@@ -1,4 +1,4 @@
-package com.example.nguyendinhduc.myapplication;
+package com.example.nguyendinhduc.myapplication.issue;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import com.example.nguyendinhduc.myapplication.R;
 import com.mikhaellopez.circularimageview.CircularImageView;
 
 import java.util.List;

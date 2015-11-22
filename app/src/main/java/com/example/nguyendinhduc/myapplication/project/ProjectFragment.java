@@ -1,4 +1,4 @@
-package com.example.nguyendinhduc.myapplication;
+package com.example.nguyendinhduc.myapplication.project;
 
 
 import android.content.Context;
@@ -12,17 +12,22 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.example.nguyendinhduc.myapplication.R;
+import com.example.nguyendinhduc.myapplication.project.CreateProjectActivity;
+import com.example.nguyendinhduc.myapplication.project.DetailProjectActivity;
+import com.example.nguyendinhduc.myapplication.project.ProjectAdapter;
+
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class IssueFragment extends Fragment {
+public class ProjectFragment extends Fragment {
+    ListView projectList;
+    ProjectAdapter adapter;
     Context context;
-    ListView errorList;
-    IssueAdapter adapter;
-    FloatingActionButton createIssue;
+    FloatingActionButton createProject;
 
-    public IssueFragment() {
+    public ProjectFragment() {
         // Required empty public constructor
     }
 
@@ -36,28 +41,28 @@ public class IssueFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_issue, container, false);
-        errorList = (ListView) view.findViewById(R.id.errorList);
-        createIssue = (FloatingActionButton) view.findViewById(R.id.createIssue);
+        View view = inflater.inflate(R.layout.fragment_project, container, false);
+        projectList = (ListView) view.findViewById(R.id.projectList);
+        createProject = (FloatingActionButton) view.findViewById(R.id.createProject);
         return view;
     }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        adapter = new IssueAdapter(context, R.layout.item_error_list, null);
-        errorList.setAdapter(adapter);
-        errorList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        adapter = new ProjectAdapter(context, R.layout.item_project_list, null);
+        projectList.setAdapter(adapter);
+        projectList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(getContext(), DetailIssueActivity.class);
+                Intent intent = new Intent(getContext(), DetailProjectActivity.class);
                 startActivity(intent);
             }
         });
-        createIssue.setOnClickListener(new View.OnClickListener() {
+        createProject.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getContext(), CreateIssueActivity.class);
+                Intent intent = new Intent(getContext(), CreateProjectActivity.class);
                 startActivity(intent);
             }
         });

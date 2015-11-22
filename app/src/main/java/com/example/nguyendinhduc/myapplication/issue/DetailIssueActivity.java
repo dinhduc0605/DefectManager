@@ -1,4 +1,4 @@
-package com.example.nguyendinhduc.myapplication;
+package com.example.nguyendinhduc.myapplication.issue;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +8,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+
+import com.example.nguyendinhduc.myapplication.EditIssueActivity;
+import com.example.nguyendinhduc.myapplication.R;
 
 public class DetailIssueActivity extends AppCompatActivity {
     Button editIssue;

@@ -1,4 +1,4 @@
-package com.example.nguyendinhduc.myapplication;
+package com.example.nguyendinhduc.myapplication.account;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +7,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+
+import com.example.nguyendinhduc.myapplication.EditAccountActivity;
+import com.example.nguyendinhduc.myapplication.R;
 
 public class DetailAccountActivity extends AppCompatActivity {
 

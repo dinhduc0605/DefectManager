@@ -1,4 +1,4 @@
-package com.example.nguyendinhduc.myapplication;
+package com.example.nguyendinhduc.myapplication.project;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import com.example.nguyendinhduc.myapplication.EditProjectActivity;
+import com.example.nguyendinhduc.myapplication.R;
 
 public class DetailProjectActivity extends AppCompatActivity {
     ListView accessAccountList;

@@ -1,4 +1,4 @@
-package com.example.nguyendinhduc.myapplication;
+package com.example.nguyendinhduc.myapplication.project;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,9 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
+
+import com.example.nguyendinhduc.myapplication.R;
+import com.example.nguyendinhduc.myapplication.account.AccountAdapter;
 
 public class EditProjectActivity extends AppCompatActivity {
     Spinner spinner;
@@ -65,7 +68,7 @@ public class EditProjectActivity extends AppCompatActivity {
     }
 
     public void editAccount(View view) {
-        Intent intent = new Intent(this, EditAccountActivity.class);
+        Intent intent = new Intent(this, AccountAdapter.EditAccountActivity.class);
         startActivity(intent);
     }
 

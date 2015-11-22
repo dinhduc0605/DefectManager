@@ -1,4 +1,4 @@
-package com.example.nguyendinhduc.myapplication;
+package com.example.nguyendinhduc.myapplication.project;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,8 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
+
+import com.example.nguyendinhduc.myapplication.R;
 
 public class CreateProjectActivity extends AppCompatActivity {
     String[] statuses = {"Stable", "Development", "Test", "Release"};
