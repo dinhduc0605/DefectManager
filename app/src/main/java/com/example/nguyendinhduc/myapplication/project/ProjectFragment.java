@@ -12,10 +12,21 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.example.nguyendinhduc.myapplication.Constant;
 import com.example.nguyendinhduc.myapplication.R;
 import com.example.nguyendinhduc.myapplication.project.CreateProjectActivity;
 import com.example.nguyendinhduc.myapplication.project.DetailProjectActivity;
 import com.example.nguyendinhduc.myapplication.project.ProjectAdapter;
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+
+import java.util.List;
+
+import static com.example.nguyendinhduc.myapplication.Constant.PROJECT_TABLE;
+import static com.example.nguyendinhduc.myapplication.Constant.PROJECT_USER;
+import static com.example.nguyendinhduc.myapplication.Constant.USER_TABLE;
 
 
 /**
@@ -50,15 +61,25 @@ public class ProjectFragment extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        adapter = new ProjectAdapter(context, R.layout.item_project_list, null);
-        projectList.setAdapter(adapter);
-        projectList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        ParseQuery<ParseObject> query = ParseQuery.getQuery(PROJECT_TABLE);
+        query.include(PROJECT_USER);
+        query.findInBackground(new FindCallback<ParseObject>() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(getContext(), DetailProjectActivity.class);
-                startActivity(intent);
+            public void done(List<ParseObject> objects, ParseException e) {
+                if (e == null) {
+                    adapter = new ProjectAdapter(context, R.layout.item_project_list, objects);
+                    projectList.setAdapter(adapter);
+                    projectList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            Intent intent = new Intent(getContext(), DetailProjectActivity.class);
+                            startActivity(intent);
+                        }
+                    });
+                }
             }
         });
+
         createProject.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

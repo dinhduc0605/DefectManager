@@ -4,6 +4,10 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import com.example.nguyendinhduc.myapplication.account.AccountFragment;
+import com.example.nguyendinhduc.myapplication.issue.IssueFragment;
+import com.example.nguyendinhduc.myapplication.project.ProjectFragment;
+
 /**
  * Created by nguyendinhduc on 11/8/15.
  */

@@ -10,12 +10,11 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.example.nguyendinhduc.myapplication.EditProjectActivity;
 import com.example.nguyendinhduc.myapplication.R;
 
 public class DetailProjectActivity extends AppCompatActivity {
     ListView accessAccountList;
-    String[] accessAccounts = {"mafiaboss0605", "boydeptrai", "boyxauxi", "girlxinh", "girlxau", "girlbinhthuong"};
+    String[] accessAccounts = {"mafiaboss0605", "boydeptrai", "boyxauxi", "girlxinh", "girlxau", "girlbinhthuong","dsfadf","erte","gdf","sdfdf"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +49,7 @@ public class DetailProjectActivity extends AppCompatActivity {
         return true;
     }
 
-    public void editAccount(View view) {
+    public void editProject(View view) {
         Intent intent = new Intent(this, EditProjectActivity.class);
         startActivity(intent);
     }

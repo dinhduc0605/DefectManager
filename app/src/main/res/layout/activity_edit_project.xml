@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.nguyendinhduc.myapplication.DetailIssueActivity">
+    tools:context="com.example.nguyendinhduc.myapplication.issue.DetailIssueActivity">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbarLayout"
@@ -17,6 +17,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_above="@+id/submitBtn"
         android:layout_below="@+id/appbarLayout"
         android:orientation="vertical">
 
@@ -111,6 +112,7 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/submitBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

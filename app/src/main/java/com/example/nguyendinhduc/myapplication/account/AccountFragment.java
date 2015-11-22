@@ -12,10 +12,15 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.example.nguyendinhduc.myapplication.CreateAccountActivity;
-import com.example.nguyendinhduc.myapplication.DetailAccountActivity;
 import com.example.nguyendinhduc.myapplication.R;
-import com.example.nguyendinhduc.myapplication.account.AccountAdapter;
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+
+import java.util.List;
+
+import static com.example.nguyendinhduc.myapplication.Constant.PROJECT_TABLE;
 
 
 /**
@@ -51,15 +56,22 @@ public class AccountFragment extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        adapter = new AccountAdapter(context, R.layout.item_account_list, null);
-        accountList.setAdapter(adapter);
-        accountList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        ParseQuery<ParseObject> query = ParseQuery.getQuery(PROJECT_TABLE);
+        query.findInBackground(new FindCallback<ParseObject>() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(context, DetailAccountActivity.class);
-                startActivity(intent);
+            public void done(List<ParseObject> projects, ParseException e) {
+                adapter = new AccountAdapter(context, R.layout.item_account_list, projects);
+                accountList.setAdapter(adapter);
+                accountList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        Intent intent = new Intent(context, DetailAccountActivity.class);
+                        startActivity(intent);
+                    }
+                });
             }
         });
+
         createAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

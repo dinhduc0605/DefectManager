@@ -9,7 +9,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.nguyendinhduc.myapplication.EditIssueActivity;
 import com.example.nguyendinhduc.myapplication.R;
 
 public class DetailIssueActivity extends AppCompatActivity {

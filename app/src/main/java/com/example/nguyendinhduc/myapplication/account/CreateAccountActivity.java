@@ -9,9 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
-import android.widget.TextView;
 
-import com.example.nguyendinhduc.myapplication.EditAccountActivity;
 import com.example.nguyendinhduc.myapplication.R;
 
 public class CreateAccountActivity extends AppCompatActivity {

@@ -11,4 +11,18 @@
     <string name="title_activity_create_issue">Create Issue</string>
     <string name="title_activity_create_account">Create Account</string>
     <string name="title_activity_create_project">Create Project</string>
+
+    <string-array name="accessLv">
+        <item>Administrator</item>
+        <item>Manager</item>
+        <item>Quality Control Staff</item>
+        <item>Developer</item>
+    </string-array>
+
+    <string-array name="project_status">
+        <item>Stable</item>
+        <item>Development</item>
+        <item>Test</item>
+        <item>Release</item>
+    </string-array>
 </resources>

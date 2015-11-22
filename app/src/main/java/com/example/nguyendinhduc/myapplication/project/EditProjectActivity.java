@@ -14,13 +14,14 @@ import android.widget.Spinner;
 
 import com.example.nguyendinhduc.myapplication.R;
 import com.example.nguyendinhduc.myapplication.account.AccountAdapter;
+import com.example.nguyendinhduc.myapplication.account.EditAccountActivity;
 
 public class EditProjectActivity extends AppCompatActivity {
     Spinner spinner;
     ArrayAdapter<String> adapter;
     String[] statuses = {"Stable", "Development", "Test", "Release"};
     String[] accessAccounts = {"mafiaboss0605", "boydeptrai", "boyxauxi", "girlxinh", "girlxau", "girlbinhthuong"};
-    String[] accessAccountsAdded = {"mafiaboss0605", "boydeptrai", "boyxauxi"};
+    String[] accessAccountsAdded = {"mafiaboss0605", "boydeptrai", "boyxauxi","sdafsdf","awweqwe","dskfjl"};
     EditText projectNameInput, descriptionInput;
     Spinner statusInput, accessAccountInput;
     ListView listAccessAccount;
@@ -68,7 +69,7 @@ public class EditProjectActivity extends AppCompatActivity {
     }
 
     public void editAccount(View view) {
-        Intent intent = new Intent(this, AccountAdapter.EditAccountActivity.class);
+        Intent intent = new Intent(this, EditAccountActivity.class);
         startActivity(intent);
     }
 

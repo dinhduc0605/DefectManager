@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.nguyendinhduc.myapplication.DetailIssueActivity">
+    tools:context="com.example.nguyendinhduc.myapplication.issue.DetailIssueActivity">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbarLayout"
@@ -90,7 +90,8 @@
         <ListView
             android:id="@+id/listAccessAccount"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+
             android:layout_marginLeft="10dp"
             android:divider="@android:color/transparent">
 
@@ -107,7 +108,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@color/colorAccent"
-            android:onClick="editAccount"
+            android:onClick="editProject"
             android:text="Edit"
             android:textColor="@android:color/white" />
 
@@ -119,4 +120,5 @@
             android:text="Delete"
             android:textColor="@android:color/white" />
     </LinearLayout>
+
 </RelativeLayout>

@@ -8,7 +8,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.example.nguyendinhduc.myapplication.EditAccountActivity;
 import com.example.nguyendinhduc.myapplication.R;
 
 public class DetailAccountActivity extends AppCompatActivity {
