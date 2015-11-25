@@ -9,12 +9,15 @@ import android.widget.TextView;
 
 import com.example.nguyendinhduc.myapplication.R;
 import com.parse.ParseObject;
+import com.parse.ParseQuery;
+import com.parse.ParseUser;
 
 import java.util.List;
 
 import static com.example.nguyendinhduc.myapplication.Constant.MANAGER_ROLE;
 import static com.example.nguyendinhduc.myapplication.Constant.PROJECT_NAME;
 import static com.example.nguyendinhduc.myapplication.Constant.PROJECT_STATUS;
+import static com.example.nguyendinhduc.myapplication.Constant.PROJECT_TABLE;
 import static com.example.nguyendinhduc.myapplication.Constant.PROJECT_USER;
 import static com.example.nguyendinhduc.myapplication.Constant.USER_ACCESS_LEVEL;
 import static com.example.nguyendinhduc.myapplication.Constant.USER_NAME;
@@ -49,9 +52,9 @@ public class ProjectAdapter extends ArrayAdapter<ParseObject> {
 
         projectName.setText(project.getString(PROJECT_NAME));
         projectStatus.setText(projectStatuses[((int) project.getNumber(PROJECT_STATUS))]);
-        List<ParseObject> users = project.getList(PROJECT_USER);
+        List<ParseUser> users = project.getList(PROJECT_USER);
         if (users != null) {
-            for (ParseObject user : users) {
+            for (ParseUser user : users) {
                 if ((int) user.getNumber(USER_ACCESS_LEVEL) == MANAGER_ROLE) {
                     projectManager.setText("Manager: " + user.getString(USER_NAME));
                 }

@@ -6,6 +6,9 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
+/**
+ * Lop xu ly giao dien chinh cua phan mem
+ */
 public class MainActivity extends AppCompatActivity {
     ViewPager viewPager;
     ViewPagerAdapter adapter;
@@ -18,6 +21,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Khoi tao cac thanh phan trong giao dien
+     */
     private void initView() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

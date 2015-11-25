@@ -9,6 +9,7 @@ import com.example.nguyendinhduc.myapplication.issue.IssueFragment;
 import com.example.nguyendinhduc.myapplication.project.ProjectFragment;
 
 /**
+ * Phuong thuc Xu ly cac fragment co trong giao dien main
  * Created by nguyendinhduc on 11/8/15.
  */
 public class ViewPagerAdapter extends FragmentPagerAdapter {
