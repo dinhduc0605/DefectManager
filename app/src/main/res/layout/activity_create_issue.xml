@@ -40,6 +40,27 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
+                        android:text="Project" />
+
+                    <Spinner
+                        android:id="@+id/projectSpinnerInput"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7">
+
+                    </Spinner>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/activity_horizontal_margin">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
                         android:text="Category" />
 
                     <Spinner
@@ -126,29 +147,6 @@
 
                     <EditText
                         android:id="@+id/descriptionInput"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="7">
-
-                    </EditText>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="@dimen/activity_horizontal_margin">
-
-                    <Button
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="3"
-                        android:background="@color/colorAccent"
-                        android:text="Feedback"
-                        android:textColor="@android:color/white" />
-
-                    <EditText
-                        android:id="@+id/feedbackInput"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="7">

@@ -40,14 +40,34 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
+                        android:text="Project" />
+
+                    <TextView
+                        android:id="@+id/txtProject"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7" >
+
+                    </TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/activity_horizontal_margin">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
                         android:text="Category" />
 
                     <TextView
-                        android:id="@+id/categorySpinner"
+                        android:id="@+id/txtCategory"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="7"
-                        android:text="Mobile">
+                        android:layout_weight="7" >
 
                     </TextView>
                 </LinearLayout>
@@ -65,10 +85,10 @@
                         android:text="Priority" />
 
                     <TextView
+                        android:id="@+id/txtPriority"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="7"
-                        android:text="High">
+                        android:layout_weight="7" >
 
                     </TextView>
                 </LinearLayout>
@@ -86,10 +106,10 @@
                         android:text="Assign To" />
 
                     <TextView
+                        android:id="@+id/txtAssignTo"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="7"
-                        android:text="dinhduc0605">
+                        android:layout_weight="7" >
 
                     </TextView>
                 </LinearLayout>
@@ -107,10 +127,10 @@
                         android:text="Summary" />
 
                     <TextView
+                        android:id="@+id/txtSummary"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="7"
-                        android:text="Crash when login" />
+                        android:layout_weight="7" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -126,11 +146,10 @@
                         android:text="Description" />
 
                     <TextView
-                        android:id="@+id/descriptionIssue"
+                        android:id="@+id/txtDescription"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="7"
-                        android:text="When i login the application suddenly go black">
+                        android:layout_weight="7">
 
                     </TextView>
                 </LinearLayout>
@@ -142,73 +161,7 @@
                     android:text="Feedback" />
 
 
-                <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                    xmlns:app="http://schemas.android.com/apk/res-auto"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingBottom="5dp"
-                    android:paddingLeft="15dp"
-                    android:paddingRight="15dp"
-                    android:paddingTop="5dp">
 
-                    <com.mikhaellopez.circularimageview.CircularImageView
-                        android:id="@+id/avatarLvItem"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_marginRight="15dp"
-                        android:src="@drawable/face1"
-                        app:border_width="0dp" />
-
-                    <TextView
-                        android:id="@+id/summaryLvItem"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_toRightOf="@id/avatarLvItem"
-                        android:text="dinhduc0605" />
-
-                    <TextView
-                        android:id="@+id/assignToLvItem"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/summaryLvItem"
-                        android:layout_toRightOf="@id/avatarLvItem"
-                        android:text="This is not error, check it again" />
-
-                </RelativeLayout>
-
-                <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                    xmlns:app="http://schemas.android.com/apk/res-auto"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingBottom="5dp"
-                    android:paddingLeft="15dp"
-                    android:paddingRight="15dp"
-                    android:paddingTop="5dp">
-
-                    <com.mikhaellopez.circularimageview.CircularImageView
-                        android:id="@+id/avatarLvItem1"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_marginRight="15dp"
-                        android:src="@drawable/face2"
-                        app:border_width="0dp" />
-
-                    <TextView
-                        android:id="@+id/summaryLvItem1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_toRightOf="@id/avatarLvItem1"
-                        android:text="dinhduc0605" />
-
-                    <TextView
-                        android:id="@+id/assignToLvItem1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/summaryLvItem1"
-                        android:layout_toRightOf="@id/avatarLvItem1"
-                        android:text="This is not error, check it again" />
-
-                </RelativeLayout>
 
             </LinearLayout>
 
@@ -222,7 +175,7 @@
             android:layout_alignParentBottom="true">
 
             <Button
-                android:id="@+id/editIssue"
+                android:id="@+id/btnEditIssue"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -231,6 +184,7 @@
                 android:textColor="@android:color/white" />
 
             <Button
+                android:id="@+id/btnDeleteIssue"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
