@@ -2,6 +2,7 @@ package com.example.nguyendinhduc.myapplication;
 
 import android.app.Application;
 
+import com.example.nguyendinhduc.myapplication.issue.Issue;
 import com.example.nguyendinhduc.myapplication.project.Project;
 import com.parse.Parse;
 import com.parse.ParseObject;
@@ -15,6 +16,7 @@ public class MyApplication extends Application {
         super.onCreate();
         Parse.enableLocalDatastore(this);
         ParseObject.registerSubclass(Project.class);
+        ParseObject.registerSubclass(Issue.class);
         Parse.initialize(this, "uQxiHr6VHD7rbPlzptFjyA40g9le9lub0UsfJJe0", "fMMg6PoGWdfjAO4fApIpn7j0s3E2byNvn07xZnmG");
     }
 }

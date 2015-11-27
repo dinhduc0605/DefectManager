@@ -21,6 +21,14 @@ public class Constant {
     public static final int DETAIL_PROJECT_RESULT_CODE = 1;
     public static final int CREATE_PROJECT_RESULT_CODE = 2;
 
+    public static final int DETAIL_ISSUE_REQUEST_CODE = 0;
+    public static final int EDIT_ISSUE_REQUEST_CODE = 1;
+    public static final int CREATE_ISSUE_REQUEST_CODE = 2;
+
+    public static final int DELETE_ISSUE_RESULT_CODE = 0;
+    public static final int DETAIL_ISSUE_RESULT_CODE = 1;
+    public static final int CREATE_ISSUE_RESULT_CODE = 2;
+
     public static final int ADMIN_ROLE = 0;
     public static final int MANAGER_ROLE = 1;
     public static final int QUALITY_CONTROL_ROLE = 2;
@@ -40,16 +48,21 @@ public class Constant {
     public static final String PROJECT_USER = "userID";
     public static final String PROJECT_CATEGORY = "categoryID";
 
-    public static final String CATEGORY_TABLE = "Category";
-    public static final String CATEGORY_ID = "objectId";
-    public static final String CATEGORY_NAME = "categoryName";
-    public static final String CATEGORY_BRANCH = "branch";
-    public static final String CATEGORY_VERSION = "version";
-
     public static final String USER_TABLE = "_User";
     public static final String USER_ID = "objectId";
     public static final String USER_NAME = "username";
     public static final String USER_EMAIL = "email";
     public static final String USER_FULLNAME = "fullname";
     public static final String USER_ACCESS_LEVEL = "accessLevel";
+    public static final String PASS="password";
+
+    public static final String ISSUE_TABLE = "Issue";
+    public static final String ISSUE_ID = "objectId";
+    public static final String ISSUE_STATUS = "status";
+    public static final String ISSUE_PRIORITY = "priority";
+    public static final String ISSUE_ASSIGN_TO = "assignTo";
+    public static final String ISSUE_SUMMARY = "summary";
+    public static final String ISSUE_DESCRIPTION = "description";
+    public static final String ISSUE_CATEGORY = "category";
+    public static final String ISSUE_PROJECT = "project";
 }

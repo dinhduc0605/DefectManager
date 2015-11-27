@@ -19,7 +19,7 @@ public class RemoveProjectCommand implements ProjectCommand {
     }
 
     /**
-     * Thuc hien phuong thuc xoa project cua lop PrjectController
+     * Thuc hien phuong thuc xoa project cua lop ProjectController
      */
     @Override
     public void excute() {

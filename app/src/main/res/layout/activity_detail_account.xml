@@ -33,11 +33,10 @@
                 android:text="Username" />
 
             <TextView
-                android:id="@+id/usernameDetailAccount"
+                android:id="@+id/usernameDetail"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="7"
-                android:text="mafiaboss0605" />
+                android:layout_weight="7" />
         </LinearLayout>
 
         <LinearLayout
@@ -53,11 +52,10 @@
                 android:text="Realname" />
 
             <TextView
-                android:id="@+id/realNameDetailAccount"
+                android:id="@+id/realNameDetail"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="7"
-                android:text="Nguyen Dinh Duc" />
+                android:layout_weight="7" />
         </LinearLayout>
 
         <LinearLayout
@@ -73,11 +71,10 @@
                 android:text="Access Level" />
 
             <TextView
-                android:id="@+id/accessLvDetailAccount"
+                android:id="@+id/accessLvDetail"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="7"
-                android:text="Administrator" />
+                android:layout_weight="7"/>
         </LinearLayout>
 
         <LinearLayout
@@ -93,11 +90,10 @@
                 android:text="Email" />
 
             <TextView
-                android:id="@+id/emailDetailAccount"
+                android:id="@+id/emailDetail"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="7"
-                android:text="dinhduc0605@gmail.com" />
+                android:layout_weight="7" />
         </LinearLayout>
 
 
@@ -123,6 +119,7 @@
             android:layout_weight="1"
             android:background="@color/colorAccent"
             android:text="Delete"
+            android:onClick="deleteAccount"
             android:textColor="@android:color/white" />
     </LinearLayout>
 </RelativeLayout>

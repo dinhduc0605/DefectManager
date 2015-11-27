@@ -12,6 +12,18 @@
     <string name="title_activity_create_account">Create Account</string>
     <string name="title_activity_create_project">Create Project</string>
 
+    <string-array name="project_status">
+        <item>Stable</item>
+        <item>Development</item>
+        <item>Test</item>
+        <item>Release</item>
+    </string-array>
+    <string-array name="issue_status">
+        <item>new</item>
+        <item>not issue</item>
+        <item>fixed</item>
+    </string-array>
+
     <string-array name="accessLv">
         <item>Administrator</item>
         <item>Manager</item>
@@ -19,10 +31,18 @@
         <item>Developer</item>
     </string-array>
 
-    <string-array name="project_status">
-        <item>Stable</item>
-        <item>Development</item>
-        <item>Test</item>
-        <item>Release</item>
+    <string-array name="access_level">
+        <item>Admin</item>
+        <item>Developer</item>
+        <item>QualityControlStaff</item>
+        <item>Tester</item>
+        <item>Manager</item>
+    </string-array>
+
+    <string-array name="issue_priority">
+        <item>low</item>
+        <item>medium</item>
+        <item>high</item>
+        <item>urgent</item>
     </string-array>
 </resources>

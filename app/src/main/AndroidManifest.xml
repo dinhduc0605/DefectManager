@@ -25,12 +25,14 @@
             android:label="@string/title_activity_detail_issue"
             android:theme="@style/AppTheme" >
         </activity>
+        <activity android:name=".issue.CreateIssueActivity" android:label="@string/title_activity_create_issue" >
+        </activity>
         <activity
             android:name=".account.DetailAccountActivity"
             android:label="@string/title_activity_detail_account" >
         </activity>
         <activity
-            android:name=".account.AccountAdapter$EditAccountActivity"
+            android:name=".account.EditAccountActivity"
             android:label="@string/title_activity_edit_account" >
         </activity>
         <activity android:name=".account.CreateAccountActivity"
@@ -47,8 +49,7 @@
         </activity>
         <activity android:name=".issue.EditIssueActivity" android:label="@string/title_activity_edit_issue">
         </activity>
-        <activity android:name=".issue.CreateIssueActivity" android:label="@string/title_activity_create_issue" >
-        </activity>
+
     </application>
 
 </manifest>
