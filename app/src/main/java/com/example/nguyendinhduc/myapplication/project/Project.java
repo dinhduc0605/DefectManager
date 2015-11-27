@@ -19,23 +19,25 @@ import static com.example.nguyendinhduc.myapplication.Constant.PROJECT_USER;
 @ParseClassName("Project")
 public class Project extends ParseObject {
 
-    public Project(){
+    public Project() {
 
     }
 
     /**
      * Luu cac du lieu cua project
      *
-     * @param projectName Ten cua project
-     * @param projectStatus Trang thai cua project
-     * @param description Mo ta project
+     * @param projectName     Ten cua project
+     * @param projectStatus   Trang thai cua project
+     * @param description     Mo ta project
      * @param addedCategories Mang category cua project
-     * @param addedAccounts Mang cac tai khoan tham gia vao project
+     * @param addedAccounts   Mang cac tai khoan tham gia vao project
      */
-    public void setData(String projectName, int projectStatus, String description, List<String> addedCategories,List<ParseObject> addedAccounts){
+    public void setData(String projectName, int projectStatus, String description, List<String> addedCategories, List<ParseObject> addedAccounts) {
         put(PROJECT_NAME, projectName);
         put(PROJECT_STATUS, projectStatus);
         put(PROJECT_DESCRIPTION, description);
+        remove(PROJECT_CATEGORY);
+        remove(PROJECT_USER);
         addAllUnique(PROJECT_CATEGORY, addedCategories);
         addAllUnique(PROJECT_USER, addedAccounts);
     }

@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -17,6 +18,7 @@ import com.parse.GetCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
+import com.parse.ParseUser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +33,9 @@ import static com.example.nguyendinhduc.myapplication.Constant.PROJECT_NAME;
 import static com.example.nguyendinhduc.myapplication.Constant.PROJECT_STATUS;
 import static com.example.nguyendinhduc.myapplication.Constant.PROJECT_TABLE;
 import static com.example.nguyendinhduc.myapplication.Constant.PROJECT_USER;
+import static com.example.nguyendinhduc.myapplication.Constant.USER_ACCESS_LEVEL;
 import static com.example.nguyendinhduc.myapplication.Constant.USER_NAME;
+
 //Lop xu ly giao dien hien thi thong tin cua 1 project
 public class DetailProjectActivity extends AppCompatActivity {
     String[] statuses;
@@ -42,6 +46,8 @@ public class DetailProjectActivity extends AppCompatActivity {
     TextView projectName, projectStatus, projectDescription;
     ListView listCategories, listAccounts;
     Project project;
+    ParseUser currentUser;
+    Button editProject, deleteProject;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,8 +70,16 @@ public class DetailProjectActivity extends AppCompatActivity {
         projectDescription = (TextView) findViewById(R.id.projectDescriptionTv);
         listCategories = (ListView) findViewById(R.id.listCategories);
         listAccounts = (ListView) findViewById(R.id.listAccessAccount);
+        editProject = (Button) findViewById(R.id.editProject);
+        deleteProject = (Button) findViewById(R.id.deleteProject);
 
-
+        currentUser = ParseUser.getCurrentUser();
+        if (currentUser.getInt(USER_ACCESS_LEVEL) == 1) {
+            deleteProject.setVisibility(View.GONE);
+        } else if (currentUser.getInt(USER_ACCESS_LEVEL) > 1) {
+            deleteProject.setVisibility(View.GONE);
+            editProject.setVisibility(View.GONE);
+        }
         final String objectId = getIntent().getStringExtra(PROJECT_ID);
 
         //Lenh truy van tat ca cac project co trong csdl
@@ -120,6 +134,7 @@ public class DetailProjectActivity extends AppCompatActivity {
 
     /**
      * Phuong thuc xu ly su kien button sua project duoc nhan
+     *
      * @param view button sua project
      */
     public void editProject(View view) {
@@ -132,6 +147,7 @@ public class DetailProjectActivity extends AppCompatActivity {
 
     /**
      * Phuong thuc xu ly su kien button xoa project duoc nhan
+     *
      * @param view button xoa project
      */
     public void deleteProject(View view) {
@@ -146,6 +162,7 @@ public class DetailProjectActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == EDIT_PROJECT_REQUEST_CODE) {
+            categories.clear();
             accessAccounts.clear();
             initView();
         }

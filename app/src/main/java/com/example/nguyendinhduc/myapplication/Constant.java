@@ -7,6 +7,12 @@ package com.example.nguyendinhduc.myapplication;
 public class Constant {
     public static final String CREATED_AT = "createdAt";
 
+    public static final String ROLE_ADMIN = "Admin";
+    public static final String ROLE_MANAGER = "Manager";
+    public static final String ROLE_DEVELOPER = "Developer";
+    public static final String ROLE_QUALITY_CONTROL_STAFF = "QualityControlStaff";
+    public static final String ROLE_TESTER = "Tester";
+
     public static final int DETAIL_PROJECT_REQUEST_CODE = 0;
     public static final int EDIT_PROJECT_REQUEST_CODE = 1;
     public static final int CREATE_PROJECT_REQUEST_CODE = 2;
@@ -19,6 +25,7 @@ public class Constant {
     public static final int MANAGER_ROLE = 1;
     public static final int QUALITY_CONTROL_ROLE = 2;
     public static final int DEVELOPER_ROLE = 3;
+    public static final int TESTER_ROLE = 4;
 
     public static final int PROJECT_STATUS_STABLE = 0;
     public static final int PROJECT_STATUS_RELEASE = 3;

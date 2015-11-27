@@ -4,9 +4,12 @@ import android.content.Context;
 import android.widget.Toast;
 
 import com.parse.DeleteCallback;
+import com.parse.ParseACL;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.SaveCallback;
+
+import static com.example.nguyendinhduc.myapplication.Constant.ROLE_ADMIN;
 
 /**
  * Lop Receiver trong command pattern
@@ -31,6 +34,7 @@ public class ProjectController {
 
     /**
      * Phuong thuc them project
+     *
      * @param project project can them
      * @return
      */
@@ -48,6 +52,7 @@ public class ProjectController {
 
     /**
      * Phuong thuc sua project
+     *
      * @param project project can sua
      * @return
      */
@@ -65,6 +70,7 @@ public class ProjectController {
 
     /**
      * Phuong thuc xoa project
+     *
      * @param project project can xoa
      */
     public void removeProject(ParseObject project) {

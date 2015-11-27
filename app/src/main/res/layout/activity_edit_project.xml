@@ -99,8 +99,15 @@
                     android:id="@+id/addCategory"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="3"
+                    android:layout_weight="2"
                     android:text="Add" />
+
+                <Button
+                    android:id="@+id/delCategory"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="Del" />
 
                 <EditText
                     android:id="@+id/categoryInput"
@@ -135,8 +142,15 @@
                     android:id="@+id/addAccount"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="3"
+                    android:layout_weight="2"
                     android:text="Add" />
+
+                <Button
+                    android:id="@+id/delAccount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="Del" />
 
                 <Spinner
                     android:id="@+id/accessAccountInput"
@@ -148,7 +162,7 @@
             <ListView
                 android:id="@+id/listAccessAccount"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:divider="@android:color/transparent">
 

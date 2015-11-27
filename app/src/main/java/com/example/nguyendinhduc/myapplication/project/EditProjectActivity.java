@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -20,7 +21,6 @@ import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -31,8 +31,10 @@ import static com.example.nguyendinhduc.myapplication.Constant.PROJECT_NAME;
 import static com.example.nguyendinhduc.myapplication.Constant.PROJECT_STATUS;
 import static com.example.nguyendinhduc.myapplication.Constant.PROJECT_TABLE;
 import static com.example.nguyendinhduc.myapplication.Constant.PROJECT_USER;
+import static com.example.nguyendinhduc.myapplication.Constant.USER_ACCESS_LEVEL;
 import static com.example.nguyendinhduc.myapplication.Constant.USER_NAME;
 import static com.example.nguyendinhduc.myapplication.Constant.USER_TABLE;
+
 //Lop xua ly giao dien sua noi dung cua project
 public class EditProjectActivity extends AppCompatActivity {
     String[] statuses;
@@ -40,11 +42,11 @@ public class EditProjectActivity extends AppCompatActivity {
     List<String> addedAccounts = new ArrayList<>();
     List<String> addedCategories = new ArrayList<>();
     List<ParseObject> addedAccountsParse = new ArrayList<>();
-    ArrayAdapter<String> addedCategoriesAdapter, addedAccountsAdapter;
+    ListViewAdapter addedCategoriesAdapter, addedAccountsAdapter;
     EditText projectNameInput, descriptionInput, categoryInput;
     Spinner statusInput, accessAccountInput;
     ListView listAccessAccount, listCategory;
-    Button addCategoryBtn, addUserBtn, submitBtn;
+    Button addCategoryBtn, addUserBtn, delCategoryBtn, delUserBtn, submitBtn;
     List<ParseObject> users;
     Project project;
 
@@ -73,6 +75,8 @@ public class EditProjectActivity extends AppCompatActivity {
         accessAccountInput = (Spinner) findViewById(R.id.accessAccountInput);
         addCategoryBtn = (Button) findViewById(R.id.addCategory);
         addUserBtn = (Button) findViewById(R.id.addAccount);
+        delCategoryBtn = (Button) findViewById(R.id.delCategory);
+        delUserBtn = (Button) findViewById(R.id.delAccount);
         submitBtn = (Button) findViewById(R.id.submitBtn);
 
         projectNameInput.setText(project.getString(PROJECT_NAME));
@@ -85,7 +89,7 @@ public class EditProjectActivity extends AppCompatActivity {
             addedCategories = categories;
 
         }
-        addedCategoriesAdapter = new ArrayAdapter<>(getBaseContext(), android.R.layout.simple_list_item_1, addedCategories);
+        addedCategoriesAdapter = new ListViewAdapter(getBaseContext(), R.layout.item_lv_layout, addedCategories);
         listCategory.setAdapter(addedCategoriesAdapter);
         SetHeightListView.setListViewHeightBasedOnChildren(listCategory);
 
@@ -96,7 +100,7 @@ public class EditProjectActivity extends AppCompatActivity {
             }
 
         }
-        addedAccountsAdapter = new ArrayAdapter<>(getBaseContext(), android.R.layout.simple_list_item_1, addedAccounts);
+        addedAccountsAdapter = new ListViewAdapter(getBaseContext(), R.layout.item_lv_layout, addedAccounts);
         listAccessAccount.setAdapter(addedAccountsAdapter);
         SetHeightListView.setListViewHeightBasedOnChildren(listAccessAccount);
         for (ParseObject user : users) {
@@ -139,6 +143,35 @@ public class EditProjectActivity extends AppCompatActivity {
                 action.action(new EditProjectCommand(getBaseContext(), project));
             }
         });
+        delCategoryBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                for (int i = addedCategories.size() - 1; i >= 0; i--) {
+                    View view = listCategory.getChildAt(i);
+                    CheckBox checkBox = (CheckBox) view.findViewById(R.id.removeBtn);
+                    if (checkBox.isChecked()) {
+                        addedCategories.remove(i);
+                        addedCategoriesAdapter.notifyDataSetChanged();
+                        SetHeightListView.setListViewHeightBasedOnChildren(listCategory);
+                    }
+                }
+            }
+        });
+        delUserBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                for (int i = addedAccounts.size() - 1; i >= 0; i--) {
+                    View view = listAccessAccount.getChildAt(i);
+                    CheckBox checkBox = (CheckBox) view.findViewById(R.id.removeBtn);
+                    if (checkBox.isChecked()) {
+                        addedAccounts.remove(i);
+                        addedAccountsAdapter.notifyDataSetChanged();
+                        SetHeightListView.setListViewHeightBasedOnChildren(listAccessAccount);
+                        addedAccountsParse.remove(i);
+                    }
+                }
+            }
+        });
     }
 
     @Override
@@ -175,6 +208,8 @@ public class EditProjectActivity extends AppCompatActivity {
             //Lenh truy van tat ca user co trong csdl
             ParseQuery<ParseObject> query1 = ParseQuery.getQuery(USER_TABLE);
             //Han che chi lay ra cot username
+
+            query1.whereGreaterThan(USER_ACCESS_LEVEL, 0);
             query1.selectKeys(Collections.singletonList(USER_NAME));
             try {
                 users = query1.find();

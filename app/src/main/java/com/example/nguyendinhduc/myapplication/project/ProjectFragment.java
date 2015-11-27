@@ -20,6 +20,7 @@ import com.parse.GetCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
+import com.parse.ParseUser;
 
 import java.util.List;
 
@@ -30,6 +31,7 @@ import static com.example.nguyendinhduc.myapplication.Constant.DETAIL_PROJECT_RE
 import static com.example.nguyendinhduc.myapplication.Constant.PROJECT_ID;
 import static com.example.nguyendinhduc.myapplication.Constant.PROJECT_TABLE;
 import static com.example.nguyendinhduc.myapplication.Constant.PROJECT_USER;
+import static com.example.nguyendinhduc.myapplication.Constant.USER_ACCESS_LEVEL;
 
 
 /**
@@ -42,6 +44,7 @@ public class ProjectFragment extends Fragment {
     Context context;
     FloatingActionButton createProject;
     List<ParseObject> projects;
+    ParseUser currentUser;
 
     public ProjectFragment() {
         // Required empty public constructor
@@ -60,6 +63,11 @@ public class ProjectFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_project, container, false);
         projectList = (ListView) view.findViewById(R.id.projectList);
         createProject = (FloatingActionButton) view.findViewById(R.id.createProject);
+        currentUser = ParseUser.getCurrentUser();
+        if (currentUser.getInt(USER_ACCESS_LEVEL) >= 1) {
+            createProject.setVisibility(View.GONE);
+
+        }
         return view;
     }
 
